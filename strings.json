@@ -1,0 +1,19 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Strasbourg Parkings Setup",
+        "description": "Select the parking lots you want to monitor. {parkings_count} parking lots available.",
+        "data": {
+          "parkings": "Parkings to monitor"
+        }
+      }
+    },
+    "error": {
+      "no_parking_selected": "Please select at least one parking"
+    },
+    "abort": {
+      "already_configured": "This integration is already configured"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configuration des Parkings de Strasbourg",
+        "description": "Sélectionnez les parkings que vous souhaitez suivre. {parkings_count} parkings disponibles.",
+        "data": {
+          "parkings": "Parkings à surveiller"
+        }
+      }
+    },
+    "error": {
+      "no_parking_selected": "Veuillez sélectionner au moins un parking"
+    },
+    "abort": {
+      "already_configured": "Cette intégration est déjà configurée"
+    }
+  }
+}

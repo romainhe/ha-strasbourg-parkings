@@ -54,12 +54,6 @@ Intégration custom pour Home Assistant permettant de suivre en temps réel la d
 
 5. Sélectionnez les parkings que vous souhaitez surveiller
 
-### Méthode 2 : Via HACS (si vous publiez l'intégration sur GitHub)
-
-1. Ajoutez ce repository comme repository custom dans HACS
-2. Installez "Strasbourg Parkings"
-3. Redémarrez Home Assistant
-4. Configurez via l'UI
 
 ## Configuration
 

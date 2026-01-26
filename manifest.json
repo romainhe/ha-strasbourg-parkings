@@ -1,13 +1,15 @@
 {
   "domain": "strasbourg_parkings",
   "name": "Strasbourg Parkings",
-  "codeowners": ["@romainhe"],
+  "codeowners": [
+    "@romainhe"
+  ],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/romainhe/strasbourg_parkings",
+  "documentation": "https://github.com/romainhe/ha-strasbourg-parkings",
   "integration_type": "service",
   "iot_class": "cloud_polling",
   "requirements": [],
   "version": "1.0.0",
-  "issue_tracker": "https://github.com/romainhe/strasbourg_parkings/issues"
+  "issue_tracker": "https://github.com/romainhe/ha-strasbourg-parkings/issues"
 }

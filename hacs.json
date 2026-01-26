@@ -1,0 +1,7 @@
+{
+  "name": "Strasbourg Parkings",
+  "content_in_root": true,
+  "filename": "strasbourg_parkings",
+  "render_readme": true,
+  "homeassistant": "2024.1.0"
+}

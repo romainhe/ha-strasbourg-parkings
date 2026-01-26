@@ -1,5 +1,9 @@
 # Strasbourg Parkings - Intégration Home Assistant
 
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
+[![GitHub Release](https://img.shields.io/github/release/romainhe/ha-strasbourg-parkings.svg)](https://github.com/romainhe/ha-strasbourg-parkings/releases)
+[![GitHub License](https://img.shields.io/github/license/romainhe/ha-strasbourg-parkings.svg)](https://github.com/romainhe/ha-strasbourg-parkings/blob/main/LICENSE)
+
 Intégration custom pour Home Assistant permettant de suivre en temps réel la disponibilité des places de parking à Strasbourg.
 
 ## Fonctionnalités
@@ -54,6 +58,21 @@ Intégration custom pour Home Assistant permettant de suivre en temps réel la d
 
 5. Sélectionnez les parkings que vous souhaitez surveiller
 
+### Methode 2 : Via HACS (recommande)
+
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=romainhe&repository=ha-strasbourg-parkings&category=integration)
+
+1. Cliquez sur le bouton ci-dessus **OU** ajoutez manuellement le depot :
+   - Ouvrez HACS dans Home Assistant
+   - Cliquez sur les trois points en haut a droite
+   - Selectionnez "Depots personnalises"
+   - Ajoutez l'URL : `https://github.com/romainhe/ha-strasbourg-parkings`
+   - Categorie : Integration
+2. Recherchez "Strasbourg Parkings" dans HACS
+3. Cliquez sur "Telecharger"
+4. Redemarrez Home Assistant
+5. Allez dans **Parametres** -> **Appareils et services** -> **+ Ajouter une integration**
+6. Recherchez "Strasbourg Parkings" et configurez
 
 ## Configuration
 
@@ -98,10 +117,10 @@ entities:
 type: markdown
 content: |
   ## Places disponibles
-  
+
   **Gutenberg:** {{ states('sensor.gutenberg') }} places
   ({{ state_attr('sensor.gutenberg', 'taux_occupation') }}% occupé)
-  
+
   **Broglie:** {{ states('sensor.opera_broglie') }} places
   ({{ state_attr('sensor.opera_broglie', 'taux_occupation') }}% occupé)
 ```

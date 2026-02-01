@@ -1,13 +1,12 @@
 """The Strasbourg Parkings integration."""
+
 from __future__ import annotations
 
 import logging
-from typing import Any
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_PARKINGS, DOMAIN
 from .sensor import StrasbourgParkingCoordinator
@@ -22,21 +21,25 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     hass.data.setdefault(DOMAIN, {})
 
     selected_parkings = entry.data[CONF_PARKINGS]
-    coordinators = {}
+    coordinators: dict[str, StrasbourgParkingCoordinator] = {}
 
-    # Initialize coordinators and perform first refresh
-    # This can raise ConfigEntryNotReady if API is unavailable
     for parking_id in selected_parkings:
-        coordinator = StrasbourgParkingCoordinator(hass, parking_id)
+        coordinator = StrasbourgParkingCoordinator(hass, parking_id, entry)
         await coordinator.async_config_entry_first_refresh()
         coordinators[parking_id] = coordinator
 
-    # Store coordinators in hass.data
     hass.data[DOMAIN][entry.entry_id] = coordinators
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
 
+    entry.async_on_unload(entry.add_update_listener(_async_update_listener))
+
     return True
+
+
+async def _async_update_listener(hass: HomeAssistant, entry: ConfigEntry) -> None:
+    """Handle options update."""
+    await hass.config_entries.async_reload(entry.entry_id)
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:

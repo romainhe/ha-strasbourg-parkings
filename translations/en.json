@@ -2,18 +2,34 @@
   "config": {
     "step": {
       "user": {
-        "title": "Strasbourg Parkings Setup",
-        "description": "Select the parking lots you want to monitor. {parkings_count} parking lots available.",
+        "title": "Strasbourg Parkings",
+        "description": "Select the parking lots you want to monitor.",
         "data": {
           "parkings": "Parkings to monitor"
         }
       }
     },
     "error": {
-      "no_parking_selected": "Please select at least one parking"
+      "no_parking_selected": "Please select at least one parking",
+      "cannot_connect": "Unable to connect to the Strasbourg parking API"
     },
     "abort": {
       "already_configured": "This integration is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Strasbourg Parkings",
+        "description": "Update the parking lots you want to monitor.",
+        "data": {
+          "parkings": "Parkings to monitor"
+        }
+      }
+    },
+    "error": {
+      "no_parking_selected": "Please select at least one parking",
+      "cannot_connect": "Unable to connect to the Strasbourg parking API"
     }
   }
 }
